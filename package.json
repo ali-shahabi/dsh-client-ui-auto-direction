@@ -1,0 +1,39 @@
+{
+  "name": "dsh-client-ui-auto-direction",
+  "version": "0.1.0",
+  "description": "Auto-direction for the DSH Web GUI — switches writing/bubble direction to RTL when Persian/Arabic/Hebrew text is detected, LTR otherwise.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./src/*": "./src/*",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "engines": { "dsh": ">=0.2.0-rc.1" },
+    "bundle": { "patch": "./cordis.patch.yml" },
+    "client": {
+      "inject": ["@deepseek-ai/dsh-client-locale", "@deepseek-ai/dsh-client-ui-layout"],
+      "platform": "web"
+    }
+  },
+  "files": ["lib/index.js", "lib/client.js", "src/", "cordis.patch.yml", "README.md", "LICENSE", "NOTICE"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ali-shahabi/dsh-client-ui-auto-direction.git"
+  },
+  "homepage": "https://github.com/ali-shahabi/dsh-client-ui-auto-direction#readme",
+  "bugs": {
+    "url": "https://github.com/ali-shahabi/dsh-client-ui-auto-direction/issues"
+  },
+  "author": {
+    "name": "Ali Shahabi",
+    "url": "https://github.com/ali-shahabi"
+  },
+  "keywords": ["dsh","deepseek-harness","dsh-plugin","rtl","bidi","persian","farsi","arabic","hebrew","ui"],
+  "license": "Apache-2.0",
+  "publishConfig": {
+    "access": "public"
+  }
+}

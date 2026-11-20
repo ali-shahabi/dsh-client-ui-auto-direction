@@ -1,0 +1,4 @@
+# Auto-direction bundle patch: inserts the plugin row into the profile roster.
+- insert:
+    - id: ui-auto-direction
+      name: 'dsh-client-ui-auto-direction'
