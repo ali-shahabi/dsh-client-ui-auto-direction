@@ -4,7 +4,7 @@ Sets **text direction automatically** in the DSH Web GUI. Each text block (and t
 composer) resolves its own direction from its **first strong character**: Persian /
 Arabic / Hebrew come out RTL, English comes out LTR, in the same transcript.
 
-Font is handled by the **separate** [`dsh-client-ui-vazirmatn`](../vazirmatn) plugin.
+Font is handled by the **separate** [`dsh-client-ui-vazirmatn`](https://github.com/ali-shahabi/dsh-client-ui-vazirmatn) plugin.
 
 ## What it does
 
@@ -58,8 +58,9 @@ because that property is not inherited either.
 ## Install
 
 ```sh
-dsh plugin --profile desktop add link:/Users/alishahabi/Documents/deepseek-harness/default-workspace/auto-direction
-dsh plugin --profile web     add link:/Users/alishahabi/Documents/deepseek-harness/default-workspace/auto-direction
+git clone https://github.com/ali-shahabi/dsh-client-ui-auto-direction.git
+dsh plugin --profile desktop add link:$PWD/dsh-client-ui-auto-direction
+dsh plugin --profile web     add link:$PWD/dsh-client-ui-auto-direction   # only if you use the `dsh web` CLI
 ```
 
 The **desktop** profile is the one the DeepSeek Harness app boots.
@@ -75,3 +76,7 @@ node --test auto-direction/tests/invariants.test.js
 ## Disable
 
 `dsh plugin --profile desktop remove dsh-client-ui-auto-direction` → restart.
+
+## License
+
+Apache-2.0 — see [LICENSE](./LICENSE).
